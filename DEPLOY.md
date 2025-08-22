@@ -47,10 +47,11 @@ openssl rand -base64 32
 Vercel dovrebbe rilevare automaticamente la configurazione dal file `vercel.json`. 
 
 **Configurazioni Build:**
-- **Framework**: Other
-- **Build Command**: `npm run vercel-build`
+- **Framework**: Other (o Vite se disponibile)
+- **Build Command**: `npm run build`
 - **Output Directory**: `frontend/dist`
 - **Install Command**: `npm install`
+- **Root Directory**: lascia vuoto (usa la root del progetto)
 
 ### Passo 3: Variabili d'Ambiente
 
