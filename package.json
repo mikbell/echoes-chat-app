@@ -10,14 +10,16 @@
   "scripts": {
     "build": "npm run build:frontend",
     "build:frontend": "npm install --prefix frontend && npm run build --prefix frontend",
+    "build:api": "npm install --prefix api",
     "build:backend": "npm install --prefix backend",
     "vercel-build": "npm run build:frontend",
     "start": "npm run start --prefix backend",
     "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
-    "install-backend": "npm install --prefix backend",
-    "install-frontend": "npm install --prefix frontend",
-    "build-frontend": "npm run build --prefix frontend",
-    "postinstall": "npm run install-backend && npm run install-frontend"
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "install:all": "npm install && npm run build:api && npm run build:backend && npm run build:frontend",
+    "postinstall": "npm run build:api",
+    "test:build": "npm run build && echo Build completed successfully"
   },
   "keywords": [
     "chat",
