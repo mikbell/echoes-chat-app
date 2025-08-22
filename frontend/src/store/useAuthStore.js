@@ -3,7 +3,7 @@ import { axiosInstance } from "../lib/axios.js";
 import toast from "react-hot-toast";
 import { io } from "socket.io-client";
 
-const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:5001" : "/";
+const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:5000" : "/";
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,
@@ -21,7 +21,9 @@ export const useAuthStore = create((set, get) => ({
       set({ authUser: res.data });
       get().connectSocket();
     } catch (error) {
-      console.log("Error in checkAuth:", error);
+      if (import.meta.env.MODE === 'development') {
+        console.log("Error in checkAuth:", error);
+      }
       set({ authUser: null });
     } finally {
       set({ isCheckingAuth: false });
@@ -36,7 +38,19 @@ export const useAuthStore = create((set, get) => ({
       toast.success("Account created successfully");
       get().connectSocket();
     } catch (error) {
-      toast.error(error.response.data.message);
+      if (import.meta.env.MODE === 'development') {
+        console.log("Error in signup:", error);
+      }
+      
+      // Handle different types of errors
+      if (error.response) {
+        const message = error.response.data?.message || "Signup failed";
+        toast.error(message);
+      } else if (error.request) {
+        toast.error("Cannot connect to server. Please check if the backend is running.");
+      } else {
+        toast.error("An unexpected error occurred during signup");
+      }
     } finally {
       set({ isSigningUp: false });
     }
@@ -51,7 +65,22 @@ export const useAuthStore = create((set, get) => ({
 
       get().connectSocket();
     } catch (error) {
-      toast.error(error.response.data.message);
+      if (import.meta.env.MODE === 'development') {
+        console.log("Error in login:", error);
+      }
+      
+      // Handle different types of errors
+      if (error.response) {
+        // Server responded with an error status
+        const message = error.response.data?.message || "Login failed";
+        toast.error(message);
+      } else if (error.request) {
+        // Network error or server not reachable
+        toast.error("Cannot connect to server. Please check if the backend is running.");
+      } else {
+        // Something else happened
+        toast.error("An unexpected error occurred during login");
+      }
     } finally {
       set({ isLoggingIn: false });
     }
@@ -64,7 +93,23 @@ export const useAuthStore = create((set, get) => ({
       toast.success("Logged out successfully");
       get().disconnectSocket();
     } catch (error) {
-      toast.error(error.response.data.message);
+      if (import.meta.env.MODE === 'development') {
+        console.log("Error in logout:", error);
+      }
+      
+      // Handle different types of errors
+      if (error.response) {
+        const message = error.response.data?.message || "Logout failed";
+        toast.error(message);
+      } else if (error.request) {
+        toast.error("Cannot connect to server during logout");
+      } else {
+        toast.error("An unexpected error occurred during logout");
+      }
+      
+      // Even if logout fails on server, clear local state
+      set({ authUser: null });
+      get().disconnectSocket();
     }
   },
 
@@ -75,8 +120,11 @@ export const useAuthStore = create((set, get) => ({
       set({ authUser: res.data });
       toast.success("Profile updated successfully");
     } catch (error) {
-      console.log("error in update profile:", error);
-      toast.error(error.response.data.message);
+      if (import.meta.env.MODE === 'development') {
+        console.log("error in update profile:", error);
+      }
+      const errorMessage = error.response?.data?.message || "Failed to update profile";
+      toast.error(errorMessage);
     } finally {
       set({ isUpdatingProfile: false });
     }

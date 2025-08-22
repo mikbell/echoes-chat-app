@@ -1,0 +1,100 @@
+{
+  "app": {
+    "name": "Echoes"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "save": "Sauvegarder",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "send": "Envoyer",
+    "online": "En ligne",
+    "offline": "Hors ligne",
+    "typing": "est en train d'écrire..."
+  },
+  "navigation": {
+    "home": "Accueil",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "logout": "Se déconnecter"
+  },
+  "auth": {
+    "login": "Se connecter",
+    "signup": "S'inscrire",
+    "loginTitle": "Bon retour !",
+    "signupTitle": "Créez votre compte",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "fullName": "Nom Complet",
+    "alreadyHaveAccount": "Vous avez déjà un compte ?",
+    "dontHaveAccount": "Vous n'avez pas de compte ?",
+    "loginHere": "Connectez-vous ici",
+    "signupHere": "Inscrivez-vous ici",
+    "forgotPassword": "Mot de passe oublié ?",
+    "loginSuccess": "Connexion réussie !",
+    "signupSuccess": "Compte créé avec succès !",
+    "logoutSuccess": "Déconnexion réussie !",
+    "profileUpdated": "Profil mis à jour avec succès !"
+  },
+  "chat": {
+    "selectChat": "Sélectionnez une conversation pour commencer à discuter",
+    "startChatting": "Commencez à discuter avec vos amis et collègues",
+    "typeMessage": "Tapez un message...",
+    "sendImage": "Envoyer une image",
+    "noMessages": "Aucun message encore",
+    "onlineNow": "En ligne maintenant",
+    "lastSeen": "Vu pour la dernière fois",
+    "messageSent": "Message envoyé",
+    "imageUploading": "Téléchargement de l'image...",
+    "searchUsers": "Rechercher des utilisateurs...",
+    "noUsersFound": "Aucun utilisateur trouvé"
+  },
+  "profile": {
+    "title": "Profil",
+    "updatePicture": "Mettre à jour l'image",
+    "updateProfile": "Mettre à jour le profil",
+    "memberSince": "Membre depuis",
+    "profileInfo": "Informations du profil"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "appearance": "Apparence",
+    "theme": "Thème",
+    "language": "Langue",
+    "notifications": "Notifications",
+    "privacy": "Confidentialité",
+    "themes": {
+      "light": "Clair",
+      "dark": "Sombre",
+      "system": "Système"
+    }
+  },
+  "languages": {
+    "en": "English",
+    "it": "Italiano",
+    "es": "Español",
+    "fr": "Français"
+  },
+  "errors": {
+    "networkError": "Erreur réseau. Veuillez réessayer.",
+    "serverError": "Erreur serveur. Veuillez réessayer plus tard.",
+    "invalidCredentials": "Identifiants invalides",
+    "passwordTooShort": "Le mot de passe doit contenir au moins 6 caractères",
+    "passwordsNotMatch": "Les mots de passe ne correspondent pas",
+    "emailRequired": "L'email est requis",
+    "passwordRequired": "Le mot de passe est requis",
+    "nameRequired": "Le nom est requis",
+    "somethingWentWrong": "Quelque chose s'est mal passé",
+    "imageUploadFailed": "Échec du téléchargement de l'image"
+  },
+  "placeholders": {
+    "enterEmail": "Entrez votre email",
+    "enterPassword": "Entrez votre mot de passe",
+    "enterName": "Entrez votre nom complet",
+    "searchConversations": "Rechercher des conversations..."
+  }
+}

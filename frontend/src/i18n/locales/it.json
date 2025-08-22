@@ -1,0 +1,100 @@
+{
+  "app": {
+    "name": "Echoes"
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "success": "Successo",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "edit": "Modifica",
+    "delete": "Elimina",
+    "send": "Invia",
+    "online": "Online",
+    "offline": "Offline",
+    "typing": "sta scrivendo..."
+  },
+  "navigation": {
+    "home": "Home",
+    "profile": "Profilo",
+    "settings": "Impostazioni",
+    "logout": "Esci"
+  },
+  "auth": {
+    "login": "Accedi",
+    "signup": "Registrati",
+    "loginTitle": "Bentornato!",
+    "signupTitle": "Crea il tuo account",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Conferma Password",
+    "fullName": "Nome Completo",
+    "alreadyHaveAccount": "Hai già un account?",
+    "dontHaveAccount": "Non hai un account?",
+    "loginHere": "Accedi qui",
+    "signupHere": "Registrati qui",
+    "forgotPassword": "Password dimenticata?",
+    "loginSuccess": "Accesso riuscito!",
+    "signupSuccess": "Account creato con successo!",
+    "logoutSuccess": "Uscita riuscita!",
+    "profileUpdated": "Profilo aggiornato con successo!"
+  },
+  "chat": {
+    "selectChat": "Seleziona una conversazione per iniziare a messaggiare",
+    "startChatting": "Inizia a chattare con i tuoi amici e colleghi",
+    "typeMessage": "Scrivi un messaggio...",
+    "sendImage": "Invia immagine",
+    "noMessages": "Nessun messaggio ancora",
+    "onlineNow": "Online ora",
+    "lastSeen": "Visto l'ultima volta",
+    "messageSent": "Messaggio inviato",
+    "imageUploading": "Caricamento immagine...",
+    "searchUsers": "Cerca utenti...",
+    "noUsersFound": "Nessun utente trovato"
+  },
+  "profile": {
+    "title": "Profilo",
+    "updatePicture": "Aggiorna Immagine",
+    "updateProfile": "Aggiorna Profilo",
+    "memberSince": "Membro dal",
+    "profileInfo": "Informazioni Profilo"
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "appearance": "Aspetto",
+    "theme": "Tema",
+    "language": "Lingua",
+    "notifications": "Notifiche",
+    "privacy": "Privacy",
+    "themes": {
+      "light": "Chiaro",
+      "dark": "Scuro",
+      "system": "Sistema"
+    }
+  },
+  "languages": {
+    "en": "English",
+    "it": "Italiano",
+    "es": "Español",
+    "fr": "Français"
+  },
+  "errors": {
+    "networkError": "Errore di rete. Riprova.",
+    "serverError": "Errore del server. Riprova più tardi.",
+    "invalidCredentials": "Credenziali non valide",
+    "passwordTooShort": "La password deve avere almeno 6 caratteri",
+    "passwordsNotMatch": "Le password non corrispondono",
+    "emailRequired": "L'email è richiesta",
+    "passwordRequired": "La password è richiesta",
+    "nameRequired": "Il nome è richiesto",
+    "somethingWentWrong": "Qualcosa è andato storto",
+    "imageUploadFailed": "Caricamento immagine fallito"
+  },
+  "placeholders": {
+    "enterEmail": "Inserisci la tua email",
+    "enterPassword": "Inserisci la tua password",
+    "enterName": "Inserisci il tuo nome completo",
+    "searchConversations": "Cerca conversazioni..."
+  }
+}
