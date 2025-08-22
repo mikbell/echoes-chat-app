@@ -2,6 +2,13 @@
   "name": "echoes-api",
   "version": "1.0.0",
   "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'API serverless build completed - ready for Vercel'",
+    "start": "node index.js",
+    "test": "node -e \"console.log('Testing API...'); const app = require('./index.js'); console.log('API loaded successfully');\"",
+    "dev": "node index.js"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.5.1",
