@@ -12,6 +12,7 @@
   "dependencies": {
     "autoprefixer": "^10.4.21",
     "axios": "^1.7.7",
+    "daisyui": "^5.0.50",
     "framer-motion": "^12.23.12",
     "i18next": "^25.4.0",
     "i18next-browser-languagedetector": "^8.2.0",
