@@ -5,10 +5,37 @@ import express from "express";
 const app = express();
 const server = http.createServer(app);
 
+// Configure allowed origins for Socket.IO
+const getAllowedOrigins = () => {
+  const origins = ["http://localhost:5173"]; // Local development
+  
+  // Add production URLs
+  if (process.env.FRONTEND_URL) {
+    origins.push(process.env.FRONTEND_URL);
+  }
+  
+  // Add Vercel URL if available
+  if (process.env.VERCEL_URL) {
+    origins.push(`https://${process.env.VERCEL_URL}`);
+  }
+  
+  // Add wildcard patterns for production
+  if (process.env.NODE_ENV === 'production') {
+    origins.push(/https:\/\/.*\.vercel\.app$/);
+    origins.push(/https:\/\/.*\.onrender\.com$/);
+  }
+  
+  return origins;
+};
+
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173"],
+    origin: getAllowedOrigins(),
+    methods: ["GET", "POST"],
+    credentials: true
   },
+  transports: ['websocket', 'polling'],
+  allowEIO3: true
 });
 
 export function getReceiverSocketId(userId) {

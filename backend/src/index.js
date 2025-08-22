@@ -33,9 +33,14 @@ if (process.env.FRONTEND_URL) {
   allowedOrigins.push(process.env.FRONTEND_URL);
 }
 
-// Add Render.com patterns for dynamic URLs
+// Add Vercel.app patterns for dynamic URLs
 if (process.env.NODE_ENV === 'production') {
+  allowedOrigins.push(/https:\/\/.*\.vercel\.app$/);
   allowedOrigins.push(/https:\/\/.*\.onrender\.com$/);
+  // Add Vercel URL if available
+  if (process.env.VERCEL_URL) {
+    allowedOrigins.push(`https://${process.env.VERCEL_URL}`);
+  }
 }
 
 app.use(
